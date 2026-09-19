@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Model weights / generated model files
+models/*.pt
+models/*.onnx
+models/*.xml
+models/*.bin
+models/*_openvino_model/
+
+# Benchmark generated output
+benchmark/results/*.json
+benchmark/results/*.csv
+
+# Ultralytics generated files
+runs/
+ultralytics/
