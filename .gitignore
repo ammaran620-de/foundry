@@ -25,8 +25,7 @@ models/*.bin
 models/*_openvino_model/
 
 # Benchmark generated output
-benchmark/results/*.json
-benchmark/results/*.csv
+benchmark/results/
 
 # Ultralytics generated files
 runs/
