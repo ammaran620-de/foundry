@@ -30,3 +30,8 @@ benchmark/results/
 # Ultralytics generated files
 runs/
 ultralytics/
+# Local evaluation dataset
+datasets/
+benchmark/evaluation/coco1000/images/
+benchmark/evaluation/coco1000/labels/
+benchmark/evaluation/coco1000/labels.cache
