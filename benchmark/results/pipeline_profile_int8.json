@@ -1,0 +1,164 @@
+{
+  "experiment": "Foundry M3 \u2014 INT8 full pipeline profiling",
+  "model": "C:\\Users\\Hamza\\foundry\\modules\\m3-runsonanything\\models\\yolo26n_int8_openvino_model\\yolo26n.xml",
+  "input": "C:\\Users\\Hamza\\foundry\\modules\\m3-runsonanything\\benchmark\\input\\benchmark_640.png",
+  "warmup_runs": 10,
+  "timed_runs": 50,
+  "notes": [
+    "The OpenVINO model contains embedded NMS.",
+    "Postprocess timing measures only the application-side output handoff.",
+    "Detection counts are intentionally omitted because they are not required for the pipeline timing experiment."
+  ],
+  "results": {
+    "CPU": {
+      "device": "CPU",
+      "device_name": "12th Gen Intel(R) Core(TM) i5-1235U",
+      "compile_time_s": 1.8814393000066048,
+      "cpu_threads_requested": 4,
+      "cpu_threads_actual": 4,
+      "warmup_runs": 10,
+      "timed_runs": 50,
+      "stages": {
+        "decode_ms": {
+          "mean_ms": 12.720064000459388,
+          "p50_ms": 11.94019999820739,
+          "p95_ms": 16.545999999652846,
+          "min_ms": 11.044799990486354,
+          "max_ms": 19.672099995659664,
+          "std_ms": 1.8482968650396214
+        },
+        "resize_ms": {
+          "mean_ms": 0.17268999974476174,
+          "p50_ms": 0.16120000509545207,
+          "p95_ms": 0.25198999646818265,
+          "min_ms": 0.10699999984353781,
+          "max_ms": 0.3280000091763213,
+          "std_ms": 0.05045576522349834
+        },
+        "color_conversion_ms": {
+          "mean_ms": 0.2784880009130575,
+          "p50_ms": 0.2756000030785799,
+          "p95_ms": 0.32591999988653697,
+          "min_ms": 0.19970000721514225,
+          "max_ms": 0.41290000081062317,
+          "std_ms": 0.04099630454777517
+        },
+        "normalization_ms": {
+          "mean_ms": 7.733136000751983,
+          "p50_ms": 7.518199992773589,
+          "p95_ms": 9.728130000439704,
+          "min_ms": 6.248699995921925,
+          "max_ms": 10.579199995845556,
+          "std_ms": 1.0027595669589153
+        },
+        "inference_ms": {
+          "mean_ms": 58.933120000874624,
+          "p50_ms": 58.49855000269599,
+          "p95_ms": 69.86488999755238,
+          "min_ms": 49.019500002032146,
+          "max_ms": 75.41449999553151,
+          "std_ms": 6.78366721591834
+        },
+        "postprocess_ms": {
+          "mean_ms": 0.0011080008698627353,
+          "p50_ms": 0.000900006853044033,
+          "p95_ms": 0.002320003113709389,
+          "min_ms": 0.0004999892553314567,
+          "max_ms": 0.0028999929782003164,
+          "std_ms": 0.0005920695419309402
+        },
+        "end_to_end_ms": {
+          "mean_ms": 79.91804599907482,
+          "p50_ms": 79.33775000128662,
+          "p95_ms": 93.05503499344923,
+          "min_ms": 68.84290000016335,
+          "max_ms": 97.88159999880008,
+          "std_ms": 7.8859746801658845
+        }
+      },
+      "stage_percentage_of_end_to_end": {
+        "decode_ms": 15.916385143609046,
+        "resize_ms": 0.21608386139315883,
+        "color_conversion_ms": 0.3484669794307551,
+        "normalization_ms": 9.676332678155704,
+        "inference_ms": 73.74194309199811,
+        "postprocess_ms": 0.0013864213720585236
+      }
+    },
+    "GPU": {
+      "device": "GPU",
+      "device_name": "Intel(R) UHD Graphics (iGPU)",
+      "compile_time_s": 3.480042700000922,
+      "cpu_threads_requested": null,
+      "cpu_threads_actual": null,
+      "warmup_runs": 10,
+      "timed_runs": 50,
+      "stages": {
+        "decode_ms": {
+          "mean_ms": 12.07634799880907,
+          "p50_ms": 11.404600001696963,
+          "p95_ms": 19.05013999858056,
+          "min_ms": 7.624899997608736,
+          "max_ms": 24.53040001273621,
+          "std_ms": 3.1562421366048485
+        },
+        "resize_ms": {
+          "mean_ms": 0.26180399989243597,
+          "p50_ms": 0.25940000341506675,
+          "p95_ms": 0.44983499756199297,
+          "min_ms": 0.10699999984353781,
+          "max_ms": 0.5453000048873946,
+          "std_ms": 0.10824030281233529
+        },
+        "color_conversion_ms": {
+          "mean_ms": 0.2531520006596111,
+          "p50_ms": 0.23145000159274787,
+          "p95_ms": 0.44661000720225275,
+          "min_ms": 0.12569999671541154,
+          "max_ms": 0.5069000035291538,
+          "std_ms": 0.09435663714967454
+        },
+        "normalization_ms": {
+          "mean_ms": 7.1654020008281805,
+          "p50_ms": 7.044850004604086,
+          "p95_ms": 8.93250000081025,
+          "min_ms": 4.73739999870304,
+          "max_ms": 14.254400011850521,
+          "std_ms": 1.469400344376525
+        },
+        "inference_ms": {
+          "mean_ms": 17.64454999967711,
+          "p50_ms": 16.198449993680697,
+          "p95_ms": 20.409359998302527,
+          "min_ms": 13.94790000631474,
+          "max_ms": 80.25810000253841,
+          "std_ms": 9.176841264420947
+        },
+        "postprocess_ms": {
+          "mean_ms": 0.0011939991964027286,
+          "p50_ms": 0.0011500014807097614,
+          "p95_ms": 0.002010000753216445,
+          "min_ms": 0.0005999900167807937,
+          "max_ms": 0.0023000029614195228,
+          "std_ms": 0.0004181647365255647
+        },
+        "end_to_end_ms": {
+          "mean_ms": 37.47463199950289,
+          "p50_ms": 34.814600003301166,
+          "p95_ms": 47.521014996164006,
+          "min_ms": 28.27580001030583,
+          "max_ms": 108.8467999943532,
+          "std_ms": 11.264897147029803
+        }
+      },
+      "stage_percentage_of_end_to_end": {
+        "decode_ms": 32.22539449878858,
+        "resize_ms": 0.6986165998799104,
+        "color_conversion_ms": 0.6755289836147536,
+        "normalization_ms": 19.120673422285325,
+        "inference_ms": 47.08398470707109,
+        "postprocess_ms": 0.003186153226050538
+      }
+    }
+  }
+}
