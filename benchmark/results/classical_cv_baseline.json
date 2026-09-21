@@ -1,0 +1,73 @@
+{
+  "experiment": "Foundry M3 \u2014 Classical CV baseline",
+  "task": "Constrained moving-object detection",
+  "resolution": [
+    640,
+    640
+  ],
+  "num_frames": 300,
+  "warmup_frames": 30,
+  "methods": {
+    "background_subtraction": {
+      "latency": {
+        "mean_ms": 8.920875555216938,
+        "p50_ms": 8.799299997917842,
+        "p95_ms": 10.201470003084978,
+        "min_ms": 7.486200003768317,
+        "max_ms": 11.215699996682815,
+        "std_ms": 0.7012097116776528
+      },
+      "mean_iou": 0.6512394402092844,
+      "mean_precision": 0.9888888888888889,
+      "mean_recall": 0.6512394402092844,
+      "fps": 112.09662031606291
+    },
+    "background_subtraction_morphology": {
+      "latency": {
+        "mean_ms": 10.271451852060165,
+        "p50_ms": 10.104600005433895,
+        "p95_ms": 11.665059993538307,
+        "min_ms": 8.435999989160337,
+        "max_ms": 38.31430000718683,
+        "std_ms": 1.8986065835364558
+      },
+      "mean_iou": 0.6407377423973255,
+      "mean_precision": 0.9888888888888889,
+      "mean_recall": 0.6407377423973255,
+      "fps": 97.35722022582699
+    },
+    "optical_flow": {
+      "latency": {
+        "mean_ms": 351.5874518512714,
+        "p50_ms": 365.1343499950599,
+        "p95_ms": 533.0634799982364,
+        "min_ms": 126.3162000104785,
+        "max_ms": 647.2702000028221,
+        "std_ms": 119.89224144504954
+      },
+      "mean_iou": 0.5425382826785559,
+      "mean_precision": 0.6234399278845522,
+      "mean_recall": 0.8075738154669545,
+      "fps": 2.844242576731721
+    },
+    "template_matching": {
+      "latency": {
+        "mean_ms": 14.861800370433937,
+        "p50_ms": 14.174349998938851,
+        "p95_ms": 22.78018499418977,
+        "min_ms": 7.368899998255074,
+        "max_ms": 96.00170000339858,
+        "std_ms": 5.921777941436645
+      },
+      "mean_iou": 1.0,
+      "mean_precision": 1.0,
+      "mean_recall": 1.0,
+      "fps": 67.28659886923255
+    }
+  },
+  "notes": [
+    "Synthetic deterministic scene with known ground-truth moving-object masks.",
+    "This is a constrained baseline and is not a general substitute for neural object detection.",
+    "Metrics are measured on the same generated sequence for all classical methods."
+  ]
+}
