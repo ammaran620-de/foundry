@@ -4,7 +4,12 @@ Foundry M3 — Standardized Backend Comparison
 Compares PyTorch, ONNX Runtime, and OpenVINO using the same
 640x640 input, batch size, warm-up count, and timed runs.
 
-This benchmark measures backend inference only.
+The benchmark measures a comparable detection inference path:
+- PyTorch uses external NMS after the raw model forward pass.
+- ONNX Runtime uses the embedded NMS in the exported ONNX graph.
+- OpenVINO uses the embedded NMS in the exported OpenVINO graph.
+
+This keeps the output-processing boundary consistent across backends.
 """
 
 from __future__ import annotations
@@ -20,6 +25,7 @@ import openvino as ov
 import torch
 from PIL import Image
 from ultralytics import YOLO
+from ultralytics.utils.nms import non_max_suppression
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -47,6 +53,10 @@ WARMUP_RUNS = 5
 TIMED_RUNS = 30
 THREADS = 10
 
+NMS_CONF_THRESHOLD = 0.25
+NMS_IOU_THRESHOLD = 0.70
+NMS_MAX_DETECTIONS = 300
+
 
 def load_input() -> np.ndarray:
     """Load and preprocess the fixed benchmark image."""
@@ -67,6 +77,7 @@ def summarize(latencies: list[float]) -> dict:
     return {
         "mean_latency_ms": round(mean, 4),
         "median_latency_ms": round(statistics.median(latencies), 4),
+        "p95_latency_ms": round(float(np.percentile(latencies, 95)), 4),
         "min_latency_ms": round(min(latencies), 4),
         "max_latency_ms": round(max(latencies), 4),
         "std_latency_ms": round(
@@ -80,7 +91,7 @@ def summarize(latencies: list[float]) -> dict:
 
 
 def benchmark_pytorch(input_tensor: np.ndarray) -> dict:
-    """Benchmark PyTorch model forward pass only."""
+    """Benchmark PyTorch inference with external NMS."""
 
     print("\n[PyTorch]")
     torch.set_num_threads(THREADS)
@@ -91,16 +102,26 @@ def benchmark_pytorch(input_tensor: np.ndarray) -> dict:
 
     tensor = torch.from_numpy(input_tensor)
 
+    def infer():
+        raw = pytorch_model(tensor)[0]
+
+        return non_max_suppression(
+            raw,
+            conf_thres=NMS_CONF_THRESHOLD,
+            iou_thres=NMS_IOU_THRESHOLD,
+            max_det=NMS_MAX_DETECTIONS,
+        )
+
     with torch.inference_mode():
         for _ in range(WARMUP_RUNS):
-            pytorch_model(tensor)
+            infer()
 
         latencies = []
 
         for index in range(TIMED_RUNS):
             start = time.perf_counter()
 
-            pytorch_model(tensor)
+            infer()
 
             end = time.perf_counter()
             latency = (end - start) * 1000.0
@@ -113,6 +134,10 @@ def benchmark_pytorch(input_tensor: np.ndarray) -> dict:
         "configuration": {
             "device": "CPU",
             "threads": THREADS,
+            "nms": "external",
+            "confidence_threshold": NMS_CONF_THRESHOLD,
+            "iou_threshold": NMS_IOU_THRESHOLD,
+            "max_detections": NMS_MAX_DETECTIONS,
         },
         "metrics": summarize(latencies),
         "latencies_ms": [round(x, 4) for x in latencies],
@@ -120,7 +145,7 @@ def benchmark_pytorch(input_tensor: np.ndarray) -> dict:
 
 
 def benchmark_onnxruntime(input_tensor: np.ndarray) -> dict:
-    """Benchmark ONNX Runtime inference only."""
+    """Benchmark ONNX Runtime inference with embedded NMS."""
 
     print("\n[ONNX Runtime]")
 
@@ -162,6 +187,7 @@ def benchmark_onnxruntime(input_tensor: np.ndarray) -> dict:
             "intra_op_threads": THREADS,
             "inter_op_threads": 1,
             "graph_optimization": "ORT_ENABLE_ALL",
+            "nms": "embedded",
         },
         "metrics": summarize(latencies),
         "latencies_ms": [round(x, 4) for x in latencies],
@@ -169,7 +195,7 @@ def benchmark_onnxruntime(input_tensor: np.ndarray) -> dict:
 
 
 def benchmark_openvino(input_tensor: np.ndarray) -> dict:
-    """Benchmark OpenVINO inference only."""
+    """Benchmark OpenVINO inference with embedded NMS."""
 
     print("\n[OpenVINO]")
 
@@ -209,6 +235,7 @@ def benchmark_openvino(input_tensor: np.ndarray) -> dict:
         "configuration": {
             "device": "CPU",
             "inference_num_threads": THREADS,
+            "nms": "embedded",
         },
         "metrics": summarize(latencies),
         "latencies_ms": [round(x, 4) for x in latencies],
@@ -245,7 +272,19 @@ def main() -> None:
 
     results = {
         "benchmark": "m3-standardized-backend-comparison",
-        "version": "0.1.0",
+        "version": "0.2.0",
+        "model": {
+            "name": "YOLO26n",
+            "pytorch_checkpoint": str(
+                PYTORCH_MODEL.relative_to(PROJECT_ROOT)
+            ),
+            "onnx_model": str(
+                ONNX_MODEL.relative_to(PROJECT_ROOT)
+            ),
+            "openvino_model": str(
+                OPENVINO_MODEL.relative_to(PROJECT_ROOT)
+            ),
+        },
         "input": {
             "file": str(INPUT_PATH.relative_to(PROJECT_ROOT)),
             "width": IMAGE_SIZE,
@@ -258,6 +297,14 @@ def main() -> None:
             "warmup_runs": WARMUP_RUNS,
             "timed_runs": TIMED_RUNS,
             "threads": THREADS,
+            "nms": {
+                "confidence_threshold": NMS_CONF_THRESHOLD,
+                "iou_threshold": NMS_IOU_THRESHOLD,
+                "max_detections": NMS_MAX_DETECTIONS,
+                "pytorch": "external",
+                "onnxruntime": "embedded",
+                "openvino": "embedded",
+            },
         },
         "backends": [
             pytorch_result,
@@ -266,11 +313,16 @@ def main() -> None:
         ],
         "notes": [
             "All backends receive the same preprocessed float32 tensor.",
-            "Only backend inference is timed.",
+            "The comparable detection path includes NMS for every backend.",
+            "PyTorch performs external NMS after the raw model forward pass.",
+            "ONNX Runtime uses NonMaxSuppression embedded in the ONNX graph.",
+            "OpenVINO uses NonMaxSuppression embedded in the OpenVINO graph.",
+            "Only backend inference and the required NMS path are timed.",
             "Input loading and preprocessing are excluded.",
             "Model loading and compilation are excluded.",
             "Warm-up runs are excluded from reported metrics.",
             "No cherry-picking of individual runs.",
+            "All timed observations remain in the recorded latency arrays.",
         ],
     }
 
@@ -289,6 +341,7 @@ def main() -> None:
         print(
             f"{backend['runtime']:16s} "
             f"{metrics['mean_latency_ms']:8.2f} ms | "
+            f"p95 {metrics['p95_latency_ms']:8.2f} ms | "
             f"{metrics['fps']:6.2f} FPS"
         )
 
