@@ -1,0 +1,341 @@
+{
+  "experiment": "Foundry M3 \u2014 Robust 10-minute sustained INT8 benchmark",
+  "model": "C:\\Users\\Hamza\\foundry\\modules\\m3-runsonanything\\models\\yolo26n_int8_openvino_model\\yolo26n.xml",
+  "input": "C:\\Users\\Hamza\\foundry\\modules\\m3-runsonanything\\benchmark\\input\\benchmark_640.png",
+  "duration_seconds": 600,
+  "warmup_runs": 20,
+  "cpu_threads": 4,
+  "inference_timeout_ms": 5000,
+  "results": {
+    "CPU": {
+      "device": "CPU",
+      "device_name": "12th Gen Intel(R) Core(TM) i5-1235U",
+      "model": "C:\\Users\\Hamza\\foundry\\modules\\m3-runsonanything\\models\\yolo26n_int8_openvino_model\\yolo26n.xml",
+      "duration_target_seconds": 600,
+      "duration_actual_seconds": 600.0034769000049,
+      "warmup_runs": 20,
+      "successful_runs": 11921,
+      "timeout_count": 0,
+      "timeout_limit_ms": 5000,
+      "cpu_threads_requested": 4,
+      "cpu_threads_actual": 4,
+      "compile_time_s": 1.6480473000119673,
+      "overall": {
+        "runs": 11921,
+        "mean_ms": 50.30133940106209,
+        "p50_ms": 49.62010000599548,
+        "p95_ms": 53.53659999673255,
+        "min_ms": 40.929299997515045,
+        "max_ms": 171.84049999923445,
+        "std_ms": 3.6672440755870563,
+        "fps": 19.86821820032007
+      },
+      "memory": {
+        "rss_before_mb": 198.6796875,
+        "rss_after_warmup_mb": 206.125,
+        "rss_after_mb": 142.125,
+        "peak_rss_observed_mb": 206.125
+      },
+      "first_minute": {
+        "minute": 1,
+        "elapsed_seconds": 60.008678500002134,
+        "successful_runs": 1207,
+        "timeouts": 0,
+        "mean_ms": 49.68991615558633,
+        "p50_ms": 49.7443999920506,
+        "p95_ms": 52.56445000268286,
+        "fps": 20.116666666666667,
+        "rss_mb": 204.90234375
+      },
+      "last_minute": {
+        "minute": 10,
+        "elapsed_seconds": 600.0008225000056,
+        "successful_runs": 1185,
+        "timeouts": 0,
+        "mean_ms": 50.56211662469903,
+        "p50_ms": 49.65000000083819,
+        "p95_ms": 54.190060001565136,
+        "fps": 19.75,
+        "rss_mb": 142.11328125
+      },
+      "latency_drift_percent": 1.7552866589303797,
+      "per_minute": [
+        {
+          "minute": 1,
+          "elapsed_seconds": 60.008678500002134,
+          "successful_runs": 1207,
+          "timeouts": 0,
+          "mean_ms": 49.68991615558633,
+          "p50_ms": 49.7443999920506,
+          "p95_ms": 52.56445000268286,
+          "fps": 20.116666666666667,
+          "rss_mb": 204.90234375
+        },
+        {
+          "minute": 2,
+          "elapsed_seconds": 120.00022139999783,
+          "successful_runs": 1197,
+          "timeouts": 0,
+          "mean_ms": 50.08771161220992,
+          "p50_ms": 49.54360000556335,
+          "p95_ms": 52.490659998147756,
+          "fps": 19.95,
+          "rss_mb": 204.9453125
+        },
+        {
+          "minute": 3,
+          "elapsed_seconds": 180.02396279999812,
+          "successful_runs": 1189,
+          "timeouts": 0,
+          "mean_ms": 50.45208174944738,
+          "p50_ms": 49.528699993970804,
+          "p95_ms": 52.806940002483316,
+          "fps": 19.816666666666666,
+          "rss_mb": 205.0234375
+        },
+        {
+          "minute": 4,
+          "elapsed_seconds": 240.01853110000957,
+          "successful_runs": 1200,
+          "timeouts": 0,
+          "mean_ms": 49.96585691683625,
+          "p50_ms": 49.54550000547897,
+          "p95_ms": 52.0336400011729,
+          "fps": 20.0,
+          "rss_mb": 204.93359375
+        },
+        {
+          "minute": 5,
+          "elapsed_seconds": 300.0283994000056,
+          "successful_runs": 1188,
+          "timeouts": 0,
+          "mean_ms": 50.483978619674666,
+          "p50_ms": 49.57510000531329,
+          "p95_ms": 56.813015003717766,
+          "fps": 19.8,
+          "rss_mb": 205.265625
+        },
+        {
+          "minute": 6,
+          "elapsed_seconds": 360.0251263999962,
+          "successful_runs": 1193,
+          "timeouts": 0,
+          "mean_ms": 50.26078449263542,
+          "p50_ms": 49.61050000565592,
+          "p95_ms": 53.51373999728822,
+          "fps": 19.883333333333333,
+          "rss_mb": 205.31640625
+        },
+        {
+          "minute": 7,
+          "elapsed_seconds": 420.00717379999696,
+          "successful_runs": 1198,
+          "timeouts": 0,
+          "mean_ms": 50.037136059919085,
+          "p50_ms": 49.63870000210591,
+          "p95_ms": 52.334269996208604,
+          "fps": 19.966666666666665,
+          "rss_mb": 205.2578125
+        },
+        {
+          "minute": 8,
+          "elapsed_seconds": 480.00711130000127,
+          "successful_runs": 1192,
+          "timeouts": 0,
+          "mean_ms": 50.30555620814139,
+          "p50_ms": 49.59999999118736,
+          "p95_ms": 53.58514499821468,
+          "fps": 19.866666666666667,
+          "rss_mb": 173.8125
+        },
+        {
+          "minute": 9,
+          "elapsed_seconds": 540.0482902000076,
+          "successful_runs": 1172,
+          "timeouts": 0,
+          "mean_ms": 51.198030034226264,
+          "p50_ms": 49.70984999090433,
+          "p95_ms": 61.06896999117453,
+          "fps": 19.533333333333335,
+          "rss_mb": 173.8359375
+        },
+        {
+          "minute": 10,
+          "elapsed_seconds": 600.0008225000056,
+          "successful_runs": 1185,
+          "timeouts": 0,
+          "mean_ms": 50.56211662469903,
+          "p50_ms": 49.65000000083819,
+          "p95_ms": 54.190060001565136,
+          "fps": 19.75,
+          "rss_mb": 142.11328125
+        }
+      ]
+    },
+    "GPU": {
+      "device": "GPU",
+      "device_name": "Intel(R) UHD Graphics (iGPU)",
+      "model": "C:\\Users\\Hamza\\foundry\\modules\\m3-runsonanything\\models\\yolo26n_int8_openvino_model\\yolo26n.xml",
+      "duration_target_seconds": 600,
+      "duration_actual_seconds": 600.0035944999981,
+      "warmup_runs": 20,
+      "successful_runs": 37070,
+      "timeout_count": 0,
+      "timeout_limit_ms": 5000,
+      "cpu_threads_requested": null,
+      "cpu_threads_actual": null,
+      "compile_time_s": 2.9551291999960085,
+      "overall": {
+        "runs": 37070,
+        "mean_ms": 16.162318894013648,
+        "p50_ms": 15.792550002515782,
+        "p95_ms": 17.65165000688285,
+        "min_ms": 13.023499996052124,
+        "max_ms": 55.74319999141153,
+        "std_ms": 2.359694395614148,
+        "fps": 61.78296320189814
+      },
+      "memory": {
+        "rss_before_mb": 285.93359375,
+        "rss_after_warmup_mb": 287.26953125,
+        "rss_after_mb": 258.88671875,
+        "peak_rss_observed_mb": 287.4140625
+      },
+      "first_minute": {
+        "minute": 1,
+        "elapsed_seconds": 60.00968369998736,
+        "successful_runs": 3739,
+        "timeouts": 0,
+        "mean_ms": 16.027693581181506,
+        "p50_ms": 15.93700000375975,
+        "p95_ms": 17.448119999608025,
+        "fps": 62.31666666666667,
+        "rss_mb": 277.62109375
+      },
+      "last_minute": {
+        "minute": 10,
+        "elapsed_seconds": 600.0000634999888,
+        "successful_runs": 3375,
+        "timeouts": 0,
+        "mean_ms": 17.751622963015475,
+        "p50_ms": 16.2687999982154,
+        "p95_ms": 32.13926000025822,
+        "fps": 56.25,
+        "rss_mb": 258.88671875
+      },
+      "latency_drift_percent": 10.755941727374145,
+      "per_minute": [
+        {
+          "minute": 1,
+          "elapsed_seconds": 60.00968369998736,
+          "successful_runs": 3739,
+          "timeouts": 0,
+          "mean_ms": 16.027693581181506,
+          "p50_ms": 15.93700000375975,
+          "p95_ms": 17.448119999608025,
+          "fps": 62.31666666666667,
+          "rss_mb": 277.62109375
+        },
+        {
+          "minute": 2,
+          "elapsed_seconds": 120.01113849999092,
+          "successful_runs": 3668,
+          "timeouts": 0,
+          "mean_ms": 16.334294056750412,
+          "p50_ms": 16.27685000130441,
+          "p95_ms": 17.680409998138202,
+          "fps": 61.13333333333333,
+          "rss_mb": 277.53515625
+        },
+        {
+          "minute": 3,
+          "elapsed_seconds": 180.01554759999271,
+          "successful_runs": 3822,
+          "timeouts": 0,
+          "mean_ms": 15.67606486152478,
+          "p50_ms": 15.554049998172559,
+          "p95_ms": 17.18498000409454,
+          "fps": 63.7,
+          "rss_mb": 260.61328125
+        },
+        {
+          "minute": 4,
+          "elapsed_seconds": 240.01302439998835,
+          "successful_runs": 3929,
+          "timeouts": 0,
+          "mean_ms": 15.247320030750062,
+          "p50_ms": 15.104699996300042,
+          "p95_ms": 16.610719994059764,
+          "fps": 65.48333333333333,
+          "rss_mb": 260.71484375
+        },
+        {
+          "minute": 5,
+          "elapsed_seconds": 300.00005599998985,
+          "successful_runs": 3703,
+          "timeouts": 0,
+          "mean_ms": 16.17546492028958,
+          "p50_ms": 16.094199992949143,
+          "p95_ms": 17.63893000606913,
+          "fps": 61.71666666666667,
+          "rss_mb": 258.890625
+        },
+        {
+          "minute": 6,
+          "elapsed_seconds": 360.0005591999943,
+          "successful_runs": 3668,
+          "timeouts": 0,
+          "mean_ms": 16.33446068703817,
+          "p50_ms": 16.28455000172835,
+          "p95_ms": 17.702534991985885,
+          "fps": 61.13333333333333,
+          "rss_mb": 259.11328125
+        },
+        {
+          "minute": 7,
+          "elapsed_seconds": 420.0150861999864,
+          "successful_runs": 3845,
+          "timeouts": 0,
+          "mean_ms": 15.585683120907525,
+          "p50_ms": 15.442200005054474,
+          "p95_ms": 17.08542000851594,
+          "fps": 64.08333333333333,
+          "rss_mb": 259.37109375
+        },
+        {
+          "minute": 8,
+          "elapsed_seconds": 480.00121539999964,
+          "successful_runs": 3929,
+          "timeouts": 0,
+          "mean_ms": 15.244521608440149,
+          "p50_ms": 15.132500004256144,
+          "p95_ms": 16.47551999776624,
+          "fps": 65.48333333333333,
+          "rss_mb": 258.83203125
+        },
+        {
+          "minute": 9,
+          "elapsed_seconds": 540.010600499998,
+          "successful_runs": 3392,
+          "timeouts": 0,
+          "mean_ms": 17.667403095461886,
+          "p50_ms": 16.176900004211348,
+          "p95_ms": 32.31686999715748,
+          "fps": 56.53333333333333,
+          "rss_mb": 258.70703125
+        },
+        {
+          "minute": 10,
+          "elapsed_seconds": 600.0000634999888,
+          "successful_runs": 3375,
+          "timeouts": 0,
+          "mean_ms": 17.751622963015475,
+          "p50_ms": 16.2687999982154,
+          "p95_ms": 32.13926000025822,
+          "fps": 56.25,
+          "rss_mb": 258.88671875
+        }
+      ]
+    }
+  }
+}
