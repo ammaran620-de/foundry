@@ -35,3 +35,8 @@ datasets/
 benchmark/evaluation/coco1000/images/
 benchmark/evaluation/coco1000/labels/
 benchmark/evaluation/coco1000/labels.cache
+
+# Generated calibration dataset files
+benchmark/evaluation/calibration300/images/
+benchmark/evaluation/calibration300/labels/
+benchmark/evaluation/calibration300/labels.cache

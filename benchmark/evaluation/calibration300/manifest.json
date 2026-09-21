@@ -1,0 +1,2124 @@
+{
+  "name": "Foundry M3 \u2014 INT8 Calibration Set",
+  "source": "COCO val2017",
+  "purpose": "OpenVINO INT8 post-training calibration",
+  "selection_seed": 20260921,
+  "size": 300,
+  "disjoint_from_evaluation": true,
+  "evaluation_subset_size": 1000,
+  "object_count_distribution": {
+    "negative": 0,
+    "1": 90,
+    "2-3": 90,
+    "4-10": 75,
+    "11+": 45
+  },
+  "scale_distribution": {
+    "small": 845,
+    "medium": 486,
+    "large": 269
+  },
+  "class_count": 80,
+  "images": [
+    {
+      "image_id": 3255,
+      "file_name": "000000003255.jpg",
+      "width": 640,
+      "height": 363,
+      "object_count": 10
+    },
+    {
+      "image_id": 8277,
+      "file_name": "000000008277.jpg",
+      "width": 612,
+      "height": 612,
+      "object_count": 13
+    },
+    {
+      "image_id": 10995,
+      "file_name": "000000010995.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 11760,
+      "file_name": "000000011760.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 3
+    },
+    {
+      "image_id": 12667,
+      "file_name": "000000012667.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 13774,
+      "file_name": "000000013774.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 14888,
+      "file_name": "000000014888.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 16439,
+      "file_name": "000000016439.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 16502,
+      "file_name": "000000016502.jpg",
+      "width": 375,
+      "height": 500,
+      "object_count": 1
+    },
+    {
+      "image_id": 20059,
+      "file_name": "000000020059.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 2
+    },
+    {
+      "image_id": 20333,
+      "file_name": "000000020333.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 3
+    },
+    {
+      "image_id": 21604,
+      "file_name": "000000021604.jpg",
+      "width": 512,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 23034,
+      "file_name": "000000023034.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 5
+    },
+    {
+      "image_id": 23230,
+      "file_name": "000000023230.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 4
+    },
+    {
+      "image_id": 32811,
+      "file_name": "000000032811.jpg",
+      "width": 375,
+      "height": 500,
+      "object_count": 1
+    },
+    {
+      "image_id": 33368,
+      "file_name": "000000033368.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 3
+    },
+    {
+      "image_id": 34452,
+      "file_name": "000000034452.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 3
+    },
+    {
+      "image_id": 34873,
+      "file_name": "000000034873.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 9
+    },
+    {
+      "image_id": 36678,
+      "file_name": "000000036678.jpg",
+      "width": 640,
+      "height": 361,
+      "object_count": 6
+    },
+    {
+      "image_id": 38825,
+      "file_name": "000000038825.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 2
+    },
+    {
+      "image_id": 46804,
+      "file_name": "000000046804.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 48153,
+      "file_name": "000000048153.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 2
+    },
+    {
+      "image_id": 49060,
+      "file_name": "000000049060.jpg",
+      "width": 640,
+      "height": 411,
+      "object_count": 7
+    },
+    {
+      "image_id": 50380,
+      "file_name": "000000050380.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 5
+    },
+    {
+      "image_id": 54123,
+      "file_name": "000000054123.jpg",
+      "width": 640,
+      "height": 428,
+      "object_count": 6
+    },
+    {
+      "image_id": 54654,
+      "file_name": "000000054654.jpg",
+      "width": 407,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 61171,
+      "file_name": "000000061171.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 7
+    },
+    {
+      "image_id": 64718,
+      "file_name": "000000064718.jpg",
+      "width": 640,
+      "height": 464,
+      "object_count": 3
+    },
+    {
+      "image_id": 65074,
+      "file_name": "000000065074.jpg",
+      "width": 424,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 66135,
+      "file_name": "000000066135.jpg",
+      "width": 500,
+      "height": 380,
+      "object_count": 1
+    },
+    {
+      "image_id": 66523,
+      "file_name": "000000066523.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 66817,
+      "file_name": "000000066817.jpg",
+      "width": 612,
+      "height": 612,
+      "object_count": 11
+    },
+    {
+      "image_id": 68765,
+      "file_name": "000000068765.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 72281,
+      "file_name": "000000072281.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 74200,
+      "file_name": "000000074200.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 9
+    },
+    {
+      "image_id": 78823,
+      "file_name": "000000078823.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 5
+    },
+    {
+      "image_id": 82846,
+      "file_name": "000000082846.jpg",
+      "width": 640,
+      "height": 454,
+      "object_count": 3
+    },
+    {
+      "image_id": 84477,
+      "file_name": "000000084477.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 3
+    },
+    {
+      "image_id": 85823,
+      "file_name": "000000085823.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 3
+    },
+    {
+      "image_id": 86956,
+      "file_name": "000000086956.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 6
+    },
+    {
+      "image_id": 89271,
+      "file_name": "000000089271.jpg",
+      "width": 640,
+      "height": 524,
+      "object_count": 1
+    },
+    {
+      "image_id": 89761,
+      "file_name": "000000089761.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 90631,
+      "file_name": "000000090631.jpg",
+      "width": 640,
+      "height": 389,
+      "object_count": 1
+    },
+    {
+      "image_id": 91619,
+      "file_name": "000000091619.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 97337,
+      "file_name": "000000097337.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 9
+    },
+    {
+      "image_id": 101787,
+      "file_name": "000000101787.jpg",
+      "width": 457,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 101884,
+      "file_name": "000000101884.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 3
+    },
+    {
+      "image_id": 102644,
+      "file_name": "000000102644.jpg",
+      "width": 375,
+      "height": 500,
+      "object_count": 1
+    },
+    {
+      "image_id": 102820,
+      "file_name": "000000102820.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 105264,
+      "file_name": "000000105264.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 9
+    },
+    {
+      "image_id": 106389,
+      "file_name": "000000106389.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 12
+    },
+    {
+      "image_id": 107226,
+      "file_name": "000000107226.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 18
+    },
+    {
+      "image_id": 109992,
+      "file_name": "000000109992.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 2
+    },
+    {
+      "image_id": 112798,
+      "file_name": "000000112798.jpg",
+      "width": 640,
+      "height": 359,
+      "object_count": 4
+    },
+    {
+      "image_id": 121744,
+      "file_name": "000000121744.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 15
+    },
+    {
+      "image_id": 122962,
+      "file_name": "000000122962.jpg",
+      "width": 640,
+      "height": 424,
+      "object_count": 29
+    },
+    {
+      "image_id": 126110,
+      "file_name": "000000126110.jpg",
+      "width": 320,
+      "height": 240,
+      "object_count": 3
+    },
+    {
+      "image_id": 130566,
+      "file_name": "000000130566.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 1
+    },
+    {
+      "image_id": 131379,
+      "file_name": "000000131379.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 133244,
+      "file_name": "000000133244.jpg",
+      "width": 640,
+      "height": 359,
+      "object_count": 20
+    },
+    {
+      "image_id": 135410,
+      "file_name": "000000135410.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 10
+    },
+    {
+      "image_id": 136466,
+      "file_name": "000000136466.jpg",
+      "width": 332,
+      "height": 500,
+      "object_count": 2
+    },
+    {
+      "image_id": 138115,
+      "file_name": "000000138115.jpg",
+      "width": 448,
+      "height": 621,
+      "object_count": 2
+    },
+    {
+      "image_id": 142238,
+      "file_name": "000000142238.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 14
+    },
+    {
+      "image_id": 147745,
+      "file_name": "000000147745.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 153343,
+      "file_name": "000000153343.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 154213,
+      "file_name": "000000154213.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 1
+    },
+    {
+      "image_id": 155154,
+      "file_name": "000000155154.jpg",
+      "width": 375,
+      "height": 500,
+      "object_count": 1
+    },
+    {
+      "image_id": 155571,
+      "file_name": "000000155571.jpg",
+      "width": 640,
+      "height": 428,
+      "object_count": 1
+    },
+    {
+      "image_id": 157213,
+      "file_name": "000000157213.jpg",
+      "width": 640,
+      "height": 360,
+      "object_count": 1
+    },
+    {
+      "image_id": 160666,
+      "file_name": "000000160666.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 160728,
+      "file_name": "000000160728.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 37
+    },
+    {
+      "image_id": 162035,
+      "file_name": "000000162035.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 5
+    },
+    {
+      "image_id": 162366,
+      "file_name": "000000162366.jpg",
+      "width": 640,
+      "height": 451,
+      "object_count": 1
+    },
+    {
+      "image_id": 162543,
+      "file_name": "000000162543.jpg",
+      "width": 640,
+      "height": 360,
+      "object_count": 6
+    },
+    {
+      "image_id": 163155,
+      "file_name": "000000163155.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 1
+    },
+    {
+      "image_id": 164637,
+      "file_name": "000000164637.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 165257,
+      "file_name": "000000165257.jpg",
+      "width": 640,
+      "height": 359,
+      "object_count": 1
+    },
+    {
+      "image_id": 165336,
+      "file_name": "000000165336.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 167353,
+      "file_name": "000000167353.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 168593,
+      "file_name": "000000168593.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 3
+    },
+    {
+      "image_id": 172571,
+      "file_name": "000000172571.jpg",
+      "width": 640,
+      "height": 361,
+      "object_count": 8
+    },
+    {
+      "image_id": 172856,
+      "file_name": "000000172856.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 173371,
+      "file_name": "000000173371.jpg",
+      "width": 612,
+      "height": 612,
+      "object_count": 10
+    },
+    {
+      "image_id": 176778,
+      "file_name": "000000176778.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 176857,
+      "file_name": "000000176857.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 16
+    },
+    {
+      "image_id": 177383,
+      "file_name": "000000177383.jpg",
+      "width": 425,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 182202,
+      "file_name": "000000182202.jpg",
+      "width": 640,
+      "height": 385,
+      "object_count": 4
+    },
+    {
+      "image_id": 183246,
+      "file_name": "000000183246.jpg",
+      "width": 500,
+      "height": 400,
+      "object_count": 18
+    },
+    {
+      "image_id": 187734,
+      "file_name": "000000187734.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 26
+    },
+    {
+      "image_id": 188689,
+      "file_name": "000000188689.jpg",
+      "width": 333,
+      "height": 500,
+      "object_count": 3
+    },
+    {
+      "image_id": 191471,
+      "file_name": "000000191471.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 193245,
+      "file_name": "000000193245.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 25
+    },
+    {
+      "image_id": 194832,
+      "file_name": "000000194832.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 14
+    },
+    {
+      "image_id": 198928,
+      "file_name": "000000198928.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 6
+    },
+    {
+      "image_id": 201775,
+      "file_name": "000000201775.jpg",
+      "width": 500,
+      "height": 382,
+      "object_count": 3
+    },
+    {
+      "image_id": 202228,
+      "file_name": "000000202228.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 204871,
+      "file_name": "000000204871.jpg",
+      "width": 612,
+      "height": 612,
+      "object_count": 11
+    },
+    {
+      "image_id": 205333,
+      "file_name": "000000205333.jpg",
+      "width": 640,
+      "height": 164,
+      "object_count": 3
+    },
+    {
+      "image_id": 206027,
+      "file_name": "000000206027.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 6
+    },
+    {
+      "image_id": 207538,
+      "file_name": "000000207538.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 1
+    },
+    {
+      "image_id": 208901,
+      "file_name": "000000208901.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 1
+    },
+    {
+      "image_id": 210388,
+      "file_name": "000000210388.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 4
+    },
+    {
+      "image_id": 212895,
+      "file_name": "000000212895.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 213171,
+      "file_name": "000000213171.jpg",
+      "width": 375,
+      "height": 500,
+      "object_count": 2
+    },
+    {
+      "image_id": 215723,
+      "file_name": "000000215723.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 6
+    },
+    {
+      "image_id": 218249,
+      "file_name": "000000218249.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 2
+    },
+    {
+      "image_id": 222118,
+      "file_name": "000000222118.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 3
+    },
+    {
+      "image_id": 226171,
+      "file_name": "000000226171.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 7
+    },
+    {
+      "image_id": 226883,
+      "file_name": "000000226883.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 230819,
+      "file_name": "000000230819.jpg",
+      "width": 640,
+      "height": 432,
+      "object_count": 2
+    },
+    {
+      "image_id": 231339,
+      "file_name": "000000231339.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 3
+    },
+    {
+      "image_id": 231879,
+      "file_name": "000000231879.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 9
+    },
+    {
+      "image_id": 233771,
+      "file_name": "000000233771.jpg",
+      "width": 640,
+      "height": 640,
+      "object_count": 17
+    },
+    {
+      "image_id": 239843,
+      "file_name": "000000239843.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 1
+    },
+    {
+      "image_id": 244496,
+      "file_name": "000000244496.jpg",
+      "width": 276,
+      "height": 500,
+      "object_count": 2
+    },
+    {
+      "image_id": 244592,
+      "file_name": "000000244592.jpg",
+      "width": 500,
+      "height": 374,
+      "object_count": 3
+    },
+    {
+      "image_id": 246968,
+      "file_name": "000000246968.jpg",
+      "width": 640,
+      "height": 428,
+      "object_count": 22
+    },
+    {
+      "image_id": 248616,
+      "file_name": "000000248616.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 7
+    },
+    {
+      "image_id": 251119,
+      "file_name": "000000251119.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 2
+    },
+    {
+      "image_id": 252776,
+      "file_name": "000000252776.jpg",
+      "width": 418,
+      "height": 640,
+      "object_count": 5
+    },
+    {
+      "image_id": 253819,
+      "file_name": "000000253819.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 2
+    },
+    {
+      "image_id": 255824,
+      "file_name": "000000255824.jpg",
+      "width": 640,
+      "height": 478,
+      "object_count": 3
+    },
+    {
+      "image_id": 256192,
+      "file_name": "000000256192.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 17
+    },
+    {
+      "image_id": 257896,
+      "file_name": "000000257896.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 259097,
+      "file_name": "000000259097.jpg",
+      "width": 500,
+      "height": 333,
+      "object_count": 2
+    },
+    {
+      "image_id": 259571,
+      "file_name": "000000259571.jpg",
+      "width": 500,
+      "height": 281,
+      "object_count": 15
+    },
+    {
+      "image_id": 263644,
+      "file_name": "000000263644.jpg",
+      "width": 473,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 266981,
+      "file_name": "000000266981.jpg",
+      "width": 426,
+      "height": 640,
+      "object_count": 28
+    },
+    {
+      "image_id": 270402,
+      "file_name": "000000270402.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 2
+    },
+    {
+      "image_id": 273132,
+      "file_name": "000000273132.jpg",
+      "width": 640,
+      "height": 633,
+      "object_count": 3
+    },
+    {
+      "image_id": 274411,
+      "file_name": "000000274411.jpg",
+      "width": 426,
+      "height": 640,
+      "object_count": 5
+    },
+    {
+      "image_id": 275791,
+      "file_name": "000000275791.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 8
+    },
+    {
+      "image_id": 277197,
+      "file_name": "000000277197.jpg",
+      "width": 600,
+      "height": 416,
+      "object_count": 9
+    },
+    {
+      "image_id": 279774,
+      "file_name": "000000279774.jpg",
+      "width": 415,
+      "height": 500,
+      "object_count": 9
+    },
+    {
+      "image_id": 281693,
+      "file_name": "000000281693.jpg",
+      "width": 640,
+      "height": 481,
+      "object_count": 6
+    },
+    {
+      "image_id": 284725,
+      "file_name": "000000284725.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 13
+    },
+    {
+      "image_id": 284762,
+      "file_name": "000000284762.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 1
+    },
+    {
+      "image_id": 286507,
+      "file_name": "000000286507.jpg",
+      "width": 640,
+      "height": 434,
+      "object_count": 1
+    },
+    {
+      "image_id": 290248,
+      "file_name": "000000290248.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 26
+    },
+    {
+      "image_id": 290833,
+      "file_name": "000000290833.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 2
+    },
+    {
+      "image_id": 292908,
+      "file_name": "000000292908.jpg",
+      "width": 384,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 293044,
+      "file_name": "000000293044.jpg",
+      "width": 288,
+      "height": 160,
+      "object_count": 4
+    },
+    {
+      "image_id": 295478,
+      "file_name": "000000295478.jpg",
+      "width": 512,
+      "height": 640,
+      "object_count": 3
+    },
+    {
+      "image_id": 296224,
+      "file_name": "000000296224.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 5
+    },
+    {
+      "image_id": 296317,
+      "file_name": "000000296317.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 3
+    },
+    {
+      "image_id": 299355,
+      "file_name": "000000299355.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 2
+    },
+    {
+      "image_id": 300659,
+      "file_name": "000000300659.jpg",
+      "width": 640,
+      "height": 360,
+      "object_count": 7
+    },
+    {
+      "image_id": 301563,
+      "file_name": "000000301563.jpg",
+      "width": 640,
+      "height": 428,
+      "object_count": 7
+    },
+    {
+      "image_id": 304180,
+      "file_name": "000000304180.jpg",
+      "width": 640,
+      "height": 418,
+      "object_count": 5
+    },
+    {
+      "image_id": 304545,
+      "file_name": "000000304545.jpg",
+      "width": 640,
+      "height": 522,
+      "object_count": 1
+    },
+    {
+      "image_id": 306700,
+      "file_name": "000000306700.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 4
+    },
+    {
+      "image_id": 307598,
+      "file_name": "000000307598.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 4
+    },
+    {
+      "image_id": 308165,
+      "file_name": "000000308165.jpg",
+      "width": 425,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 309495,
+      "file_name": "000000309495.jpg",
+      "width": 326,
+      "height": 500,
+      "object_count": 1
+    },
+    {
+      "image_id": 312263,
+      "file_name": "000000312263.jpg",
+      "width": 527,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 312340,
+      "file_name": "000000312340.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 1
+    },
+    {
+      "image_id": 312489,
+      "file_name": "000000312489.jpg",
+      "width": 500,
+      "height": 333,
+      "object_count": 4
+    },
+    {
+      "image_id": 315219,
+      "file_name": "000000315219.jpg",
+      "width": 333,
+      "height": 500,
+      "object_count": 1
+    },
+    {
+      "image_id": 317024,
+      "file_name": "000000317024.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 321557,
+      "file_name": "000000321557.jpg",
+      "width": 547,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 323895,
+      "file_name": "000000323895.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 3
+    },
+    {
+      "image_id": 325114,
+      "file_name": "000000325114.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 329827,
+      "file_name": "000000329827.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 2
+    },
+    {
+      "image_id": 331317,
+      "file_name": "000000331317.jpg",
+      "width": 640,
+      "height": 484,
+      "object_count": 2
+    },
+    {
+      "image_id": 331799,
+      "file_name": "000000331799.jpg",
+      "width": 640,
+      "height": 464,
+      "object_count": 19
+    },
+    {
+      "image_id": 335800,
+      "file_name": "000000335800.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 1
+    },
+    {
+      "image_id": 338191,
+      "file_name": "000000338191.jpg",
+      "width": 635,
+      "height": 640,
+      "object_count": 9
+    },
+    {
+      "image_id": 342186,
+      "file_name": "000000342186.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 343315,
+      "file_name": "000000343315.jpg",
+      "width": 640,
+      "height": 478,
+      "object_count": 1
+    },
+    {
+      "image_id": 346707,
+      "file_name": "000000346707.jpg",
+      "width": 333,
+      "height": 500,
+      "object_count": 4
+    },
+    {
+      "image_id": 349184,
+      "file_name": "000000349184.jpg",
+      "width": 428,
+      "height": 640,
+      "object_count": 9
+    },
+    {
+      "image_id": 350148,
+      "file_name": "000000350148.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 20
+    },
+    {
+      "image_id": 350405,
+      "file_name": "000000350405.jpg",
+      "width": 500,
+      "height": 333,
+      "object_count": 3
+    },
+    {
+      "image_id": 352584,
+      "file_name": "000000352584.jpg",
+      "width": 375,
+      "height": 500,
+      "object_count": 1
+    },
+    {
+      "image_id": 356347,
+      "file_name": "000000356347.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 3
+    },
+    {
+      "image_id": 357459,
+      "file_name": "000000357459.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 3
+    },
+    {
+      "image_id": 357941,
+      "file_name": "000000357941.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 3
+    },
+    {
+      "image_id": 359855,
+      "file_name": "000000359855.jpg",
+      "width": 640,
+      "height": 510,
+      "object_count": 1
+    },
+    {
+      "image_id": 360393,
+      "file_name": "000000360393.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 3
+    },
+    {
+      "image_id": 361571,
+      "file_name": "000000361571.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 1
+    },
+    {
+      "image_id": 363875,
+      "file_name": "000000363875.jpg",
+      "width": 558,
+      "height": 640,
+      "object_count": 3
+    },
+    {
+      "image_id": 364636,
+      "file_name": "000000364636.jpg",
+      "width": 640,
+      "height": 533,
+      "object_count": 2
+    },
+    {
+      "image_id": 365655,
+      "file_name": "000000365655.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 2
+    },
+    {
+      "image_id": 366141,
+      "file_name": "000000366141.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 4
+    },
+    {
+      "image_id": 367228,
+      "file_name": "000000367228.jpg",
+      "width": 333,
+      "height": 500,
+      "object_count": 2
+    },
+    {
+      "image_id": 368752,
+      "file_name": "000000368752.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 9
+    },
+    {
+      "image_id": 369310,
+      "file_name": "000000369310.jpg",
+      "width": 395,
+      "height": 640,
+      "object_count": 9
+    },
+    {
+      "image_id": 369751,
+      "file_name": "000000369751.jpg",
+      "width": 426,
+      "height": 640,
+      "object_count": 10
+    },
+    {
+      "image_id": 372307,
+      "file_name": "000000372307.jpg",
+      "width": 640,
+      "height": 428,
+      "object_count": 1
+    },
+    {
+      "image_id": 372349,
+      "file_name": "000000372349.jpg",
+      "width": 640,
+      "height": 437,
+      "object_count": 5
+    },
+    {
+      "image_id": 376322,
+      "file_name": "000000376322.jpg",
+      "width": 478,
+      "height": 640,
+      "object_count": 42
+    },
+    {
+      "image_id": 377497,
+      "file_name": "000000377497.jpg",
+      "width": 432,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 377814,
+      "file_name": "000000377814.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 6
+    },
+    {
+      "image_id": 379332,
+      "file_name": "000000379332.jpg",
+      "width": 500,
+      "height": 334,
+      "object_count": 5
+    },
+    {
+      "image_id": 382030,
+      "file_name": "000000382030.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 4
+    },
+    {
+      "image_id": 383339,
+      "file_name": "000000383339.jpg",
+      "width": 640,
+      "height": 428,
+      "object_count": 2
+    },
+    {
+      "image_id": 387148,
+      "file_name": "000000387148.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 14
+    },
+    {
+      "image_id": 389381,
+      "file_name": "000000389381.jpg",
+      "width": 640,
+      "height": 543,
+      "object_count": 6
+    },
+    {
+      "image_id": 392933,
+      "file_name": "000000392933.jpg",
+      "width": 383,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 393226,
+      "file_name": "000000393226.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 15
+    },
+    {
+      "image_id": 393838,
+      "file_name": "000000393838.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 15
+    },
+    {
+      "image_id": 394328,
+      "file_name": "000000394328.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 395575,
+      "file_name": "000000395575.jpg",
+      "width": 500,
+      "height": 339,
+      "object_count": 2
+    },
+    {
+      "image_id": 398237,
+      "file_name": "000000398237.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 5
+    },
+    {
+      "image_id": 399296,
+      "file_name": "000000399296.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 12
+    },
+    {
+      "image_id": 399560,
+      "file_name": "000000399560.jpg",
+      "width": 640,
+      "height": 478,
+      "object_count": 2
+    },
+    {
+      "image_id": 402765,
+      "file_name": "000000402765.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 2
+    },
+    {
+      "image_id": 404568,
+      "file_name": "000000404568.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 408112,
+      "file_name": "000000408112.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 10
+    },
+    {
+      "image_id": 412894,
+      "file_name": "000000412894.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 19
+    },
+    {
+      "image_id": 414340,
+      "file_name": "000000414340.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 416269,
+      "file_name": "000000416269.jpg",
+      "width": 640,
+      "height": 428,
+      "object_count": 1
+    },
+    {
+      "image_id": 419096,
+      "file_name": "000000419096.jpg",
+      "width": 612,
+      "height": 612,
+      "object_count": 1
+    },
+    {
+      "image_id": 419312,
+      "file_name": "000000419312.jpg",
+      "width": 375,
+      "height": 500,
+      "object_count": 12
+    },
+    {
+      "image_id": 421834,
+      "file_name": "000000421834.jpg",
+      "width": 640,
+      "height": 457,
+      "object_count": 1
+    },
+    {
+      "image_id": 424642,
+      "file_name": "000000424642.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 7
+    },
+    {
+      "image_id": 424776,
+      "file_name": "000000424776.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 1
+    },
+    {
+      "image_id": 426795,
+      "file_name": "000000426795.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 426836,
+      "file_name": "000000426836.jpg",
+      "width": 640,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 429281,
+      "file_name": "000000429281.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 18
+    },
+    {
+      "image_id": 437392,
+      "file_name": "000000437392.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 438774,
+      "file_name": "000000438774.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 17
+    },
+    {
+      "image_id": 440171,
+      "file_name": "000000440171.jpg",
+      "width": 411,
+      "height": 640,
+      "object_count": 3
+    },
+    {
+      "image_id": 442993,
+      "file_name": "000000442993.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 15
+    },
+    {
+      "image_id": 446206,
+      "file_name": "000000446206.jpg",
+      "width": 640,
+      "height": 385,
+      "object_count": 6
+    },
+    {
+      "image_id": 446207,
+      "file_name": "000000446207.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 446651,
+      "file_name": "000000446651.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 5
+    },
+    {
+      "image_id": 449603,
+      "file_name": "000000449603.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 2
+    },
+    {
+      "image_id": 450100,
+      "file_name": "000000450100.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 4
+    },
+    {
+      "image_id": 452122,
+      "file_name": "000000452122.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 1
+    },
+    {
+      "image_id": 454750,
+      "file_name": "000000454750.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 2
+    },
+    {
+      "image_id": 454978,
+      "file_name": "000000454978.jpg",
+      "width": 640,
+      "height": 400,
+      "object_count": 1
+    },
+    {
+      "image_id": 458054,
+      "file_name": "000000458054.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 10
+    },
+    {
+      "image_id": 459757,
+      "file_name": "000000459757.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 465718,
+      "file_name": "000000465718.jpg",
+      "width": 640,
+      "height": 429,
+      "object_count": 12
+    },
+    {
+      "image_id": 466339,
+      "file_name": "000000466339.jpg",
+      "width": 359,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 468245,
+      "file_name": "000000468245.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 1
+    },
+    {
+      "image_id": 472678,
+      "file_name": "000000472678.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 14
+    },
+    {
+      "image_id": 473015,
+      "file_name": "000000473015.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 5
+    },
+    {
+      "image_id": 474021,
+      "file_name": "000000474021.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 25
+    },
+    {
+      "image_id": 474039,
+      "file_name": "000000474039.jpg",
+      "width": 640,
+      "height": 401,
+      "object_count": 3
+    },
+    {
+      "image_id": 475191,
+      "file_name": "000000475191.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 475732,
+      "file_name": "000000475732.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 478721,
+      "file_name": "000000478721.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 13
+    },
+    {
+      "image_id": 479099,
+      "file_name": "000000479099.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 482719,
+      "file_name": "000000482719.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 6
+    },
+    {
+      "image_id": 485071,
+      "file_name": "000000485071.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 2
+    },
+    {
+      "image_id": 486104,
+      "file_name": "000000486104.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 17
+    },
+    {
+      "image_id": 488075,
+      "file_name": "000000488075.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 14
+    },
+    {
+      "image_id": 491497,
+      "file_name": "000000491497.jpg",
+      "width": 375,
+      "height": 500,
+      "object_count": 12
+    },
+    {
+      "image_id": 491613,
+      "file_name": "000000491613.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 491683,
+      "file_name": "000000491683.jpg",
+      "width": 366,
+      "height": 500,
+      "object_count": 2
+    },
+    {
+      "image_id": 493284,
+      "file_name": "000000493284.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 6
+    },
+    {
+      "image_id": 493613,
+      "file_name": "000000493613.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 1
+    },
+    {
+      "image_id": 496954,
+      "file_name": "000000496954.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 6
+    },
+    {
+      "image_id": 498857,
+      "file_name": "000000498857.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 1
+    },
+    {
+      "image_id": 500565,
+      "file_name": "000000500565.jpg",
+      "width": 640,
+      "height": 466,
+      "object_count": 3
+    },
+    {
+      "image_id": 500826,
+      "file_name": "000000500826.jpg",
+      "width": 640,
+      "height": 426,
+      "object_count": 1
+    },
+    {
+      "image_id": 508730,
+      "file_name": "000000508730.jpg",
+      "width": 640,
+      "height": 478,
+      "object_count": 6
+    },
+    {
+      "image_id": 509719,
+      "file_name": "000000509719.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 2
+    },
+    {
+      "image_id": 512657,
+      "file_name": "000000512657.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 10
+    },
+    {
+      "image_id": 513484,
+      "file_name": "000000513484.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 1
+    },
+    {
+      "image_id": 513580,
+      "file_name": "000000513580.jpg",
+      "width": 640,
+      "height": 484,
+      "object_count": 3
+    },
+    {
+      "image_id": 515077,
+      "file_name": "000000515077.jpg",
+      "width": 640,
+      "height": 479,
+      "object_count": 12
+    },
+    {
+      "image_id": 516708,
+      "file_name": "000000516708.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 1
+    },
+    {
+      "image_id": 521259,
+      "file_name": "000000521259.jpg",
+      "width": 640,
+      "height": 457,
+      "object_count": 19
+    },
+    {
+      "image_id": 521282,
+      "file_name": "000000521282.jpg",
+      "width": 424,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 521405,
+      "file_name": "000000521405.jpg",
+      "width": 426,
+      "height": 640,
+      "object_count": 2
+    },
+    {
+      "image_id": 522156,
+      "file_name": "000000522156.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 1
+    },
+    {
+      "image_id": 522638,
+      "file_name": "000000522638.jpg",
+      "width": 640,
+      "height": 428,
+      "object_count": 1
+    },
+    {
+      "image_id": 527784,
+      "file_name": "000000527784.jpg",
+      "width": 640,
+      "height": 512,
+      "object_count": 8
+    },
+    {
+      "image_id": 532530,
+      "file_name": "000000532530.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 6
+    },
+    {
+      "image_id": 537053,
+      "file_name": "000000537053.jpg",
+      "width": 480,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 537964,
+      "file_name": "000000537964.jpg",
+      "width": 640,
+      "height": 430,
+      "object_count": 1
+    },
+    {
+      "image_id": 542089,
+      "file_name": "000000542089.jpg",
+      "width": 375,
+      "height": 500,
+      "object_count": 1
+    },
+    {
+      "image_id": 543528,
+      "file_name": "000000543528.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 546475,
+      "file_name": "000000546475.jpg",
+      "width": 383,
+      "height": 640,
+      "object_count": 3
+    },
+    {
+      "image_id": 548506,
+      "file_name": "000000548506.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 8
+    },
+    {
+      "image_id": 549055,
+      "file_name": "000000549055.jpg",
+      "width": 640,
+      "height": 304,
+      "object_count": 2
+    },
+    {
+      "image_id": 550691,
+      "file_name": "000000550691.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 8
+    },
+    {
+      "image_id": 551815,
+      "file_name": "000000551815.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 3
+    },
+    {
+      "image_id": 553664,
+      "file_name": "000000553664.jpg",
+      "width": 640,
+      "height": 414,
+      "object_count": 17
+    },
+    {
+      "image_id": 555412,
+      "file_name": "000000555412.jpg",
+      "width": 640,
+      "height": 427,
+      "object_count": 1
+    },
+    {
+      "image_id": 556765,
+      "file_name": "000000556765.jpg",
+      "width": 640,
+      "height": 428,
+      "object_count": 1
+    },
+    {
+      "image_id": 556873,
+      "file_name": "000000556873.jpg",
+      "width": 427,
+      "height": 640,
+      "object_count": 1
+    },
+    {
+      "image_id": 557258,
+      "file_name": "000000557258.jpg",
+      "width": 331,
+      "height": 500,
+      "object_count": 1
+    },
+    {
+      "image_id": 559513,
+      "file_name": "000000559513.jpg",
+      "width": 640,
+      "height": 421,
+      "object_count": 5
+    },
+    {
+      "image_id": 561366,
+      "file_name": "000000561366.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 561679,
+      "file_name": "000000561679.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 566758,
+      "file_name": "000000566758.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 2
+    },
+    {
+      "image_id": 567640,
+      "file_name": "000000567640.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 11
+    },
+    {
+      "image_id": 568814,
+      "file_name": "000000568814.jpg",
+      "width": 640,
+      "height": 359,
+      "object_count": 6
+    },
+    {
+      "image_id": 573008,
+      "file_name": "000000573008.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 1
+    },
+    {
+      "image_id": 574315,
+      "file_name": "000000574315.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 5
+    },
+    {
+      "image_id": 575187,
+      "file_name": "000000575187.jpg",
+      "width": 500,
+      "height": 375,
+      "object_count": 3
+    },
+    {
+      "image_id": 579091,
+      "file_name": "000000579091.jpg",
+      "width": 640,
+      "height": 425,
+      "object_count": 3
+    },
+    {
+      "image_id": 579158,
+      "file_name": "000000579158.jpg",
+      "width": 640,
+      "height": 480,
+      "object_count": 9
+    },
+    {
+      "image_id": 579818,
+      "file_name": "000000579818.jpg",
+      "width": 640,
+      "height": 360,
+      "object_count": 3
+    },
+    {
+      "image_id": 579893,
+      "file_name": "000000579893.jpg",
+      "width": 500,
+      "height": 332,
+      "object_count": 1
+    }
+  ]
+}
