@@ -40,3 +40,7 @@ benchmark/evaluation/coco1000/labels.cache
 benchmark/evaluation/calibration300/images/
 benchmark/evaluation/calibration300/labels/
 benchmark/evaluation/calibration300/labels.cache
+
+# Browser generated files
+browser/node_modules/
+browser/dist/
