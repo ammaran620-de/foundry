@@ -69,7 +69,7 @@ jobs:
 
       - name: Smoke-test browser ONNX artifact
         run: |
-          python -c "import numpy as np, onnxruntime as ort; model='browser/public/models/yolo26n_webgpu.onnx'; session=ort.InferenceSession(model, providers=['CPUExecutionProvider']); inp=session.get_inputs()[0]; out=session.run(None, {inp.name: np.zeros((1,3,640,640), dtype=np.float32)}); y=out[0]; assert tuple(y.shape) == (1,300,6), f'Unexpected output shape: {y.shape}'; assert np.isfinite(y).all(), 'Non-finite output detected'; print('ORT CPU smoke test passed'); print('Input:', inp.name, inp.shape, inp.type); print('Output:', y.shape, y.dtype)"
+          python -c "import numpy as np, onnxruntime as ort; model='browser/public/models/yolo26n_webgpu.onnx'; session=ort.InferenceSession(model, providers=['CPUExecutionProvider']); inp=session.get_inputs()[0]; out=session.run(None, {inp.name: np.zeros((1,3,640,640), dtype=np.float32)}); y=out[0]; assert tuple(y.shape)==(1,300,6), f'Unexpected output shape: {y.shape}'; assert np.isfinite(y).all(), 'Non-finite output detected'; print('ORT CPU smoke test passed'); print('Input:', inp.name, inp.shape, inp.type); print('Output:', y.shape, y.dtype)"
 
       - name: Install browser dependencies
         working-directory: browser
@@ -78,3 +78,12 @@ jobs:
       - name: Build browser
         working-directory: browser
         run: npm run build
+
+      - name: Test regression gate
+        run: |
+          python benchmark/regression_gate.py `
+            --reference-accuracy benchmark/results/deployment_accuracy.json `
+            --candidate-accuracy benchmark/results/deployment_accuracy.json `
+            --reference-latency benchmark/results/sustained_int8_robust.json `
+            --candidate-latency benchmark/results/sustained_int8_robust.json
+        shell: pwsh
