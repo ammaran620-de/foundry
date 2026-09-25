@@ -231,27 +231,57 @@ The repository includes a regression gate to detect unacceptable accuracy or lat
 
 ## Current M3 Status
 
-Completed evidence:
+### Completed
 
-- reproducible environment capture
-- standardized backend comparison
+- Reproducible environment capture
+- Standardized backend comparison
 - ONNX Runtime CPU benchmark
 - OpenVINO FP16 CPU benchmark
 - INT8 calibration and deployment
 - INT8 thread scaling
 - 10-minute sustained CPU benchmark
 - 10-minute sustained Intel iGPU benchmark
-- pipeline profiling
-- browser WebGPU deployment
-- cross-platform CI validation
-- benchmark regression gate
-- observed failure inventory
-- final benchmark evidence table
+- Pipeline profiling
+- Browser WebGPU deployment
+- Cross-platform CI validation
+- Benchmark regression gate
+- Observed failure inventory
+- Final benchmark evidence table
+- M3 deployment lifecycle diagram
+- Browser deployment documentation
+- 60-second proof video
 
-Remaining publication/evidence work:
+### Publication Note
 
-- attach final failure evidence images/records
-- publish a stable browser demo link
-- create the 60-second proof video
-- complete the public write-up
+The engineering evidence, benchmark results, browser deployment, failure inventory, and supporting documentation are included in the repository.
 
+A stable hosted browser demo link is not currently included; the browser deployment is provided as a reproducible local deployment.
+
+---
+
+## Repository Structure
+
+```text
+m3-runsonanything/
+├── benchmark/
+│   ├── evaluation/
+│   ├── input/
+│   ├── results/
+│   ├── EVALUATION.md
+│   └── PROTOCOL.md
+│
+├── browser/
+│   ├── public/models/
+│   ├── src/
+│   └── README.md
+│
+├── docs/
+│   └── M3_DEPLOYMENT_LIFECYCLE.md
+│
+├── failures/
+│   └── m3/
+│
+├── models/
+├── scripts/
+├── src/
+└── README.md
