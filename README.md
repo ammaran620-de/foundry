@@ -313,3 +313,7 @@ m3-runsonanything/
 ├── scripts/
 ├── src/
 └── README.md
+
+## Licence
+
+Original code, documentation and measurements are MIT (`LICENSE`). The bundled YOLO26n ONNX export and the packages the benchmarks import carry their own terms, including AGPL-3.0 for Ultralytics, and one licensing question is still open. See `THIRD_PARTY_NOTICES.md` before reusing or redistributing anything here.
