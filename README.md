@@ -1,10 +1,19 @@
-﻿# M3 — RunsOnAnything
+# Foundry: RunsOnAnything
 
 CPU-first deployment benchmarking for YOLO26n across PyTorch, ONNX Runtime, OpenVINO, Intel iGPU, and local browser inference.
 
-## What This Module Proves
+## Headline results
 
-M3 measures how the same inference workload behaves as the runtime and execution target change.
+YOLO26n on an Intel i5-1235U laptop, no discrete GPU:
+
+- PyTorch CPU runs at 277 ms per frame (3.6 FPS). ONNX Runtime CPU runs at 69 ms (14.5 FPS), about 4x faster.
+- A 10-minute INT8 run holds 50 ms on the CPU (19.9 FPS) and 16 ms on the Intel iGPU (61.8 FPS), with zero timeouts on both. The iGPU drifts more (+10.8% against +1.8%).
+- Speed was not free: ONNX Runtime CPU scores mAP50-95 0.347 against 0.405 for the PyTorch reference, and the table below shows it.
+- The same model also runs locally in the browser through WebGPU.
+
+## What this project measures
+
+Foundry measures how the same inference workload behaves as the runtime and execution target change.
 
 The work follows the deployment ladder:
 
