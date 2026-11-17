@@ -4,7 +4,7 @@ CPU-first deployment benchmarking for YOLO26n across PyTorch, ONNX Runtime, Open
 
 ## Headline results
 
-YOLO26n on an Intel i5-1235U laptop, no discrete GPU:
+YOLO26n on an Intel i5-1235U CPU and its Intel UHD integrated GPU:
 
 - PyTorch CPU runs at 277 ms per frame (3.6 FPS). ONNX Runtime CPU runs at 69 ms (14.5 FPS), about 4x faster.
 - A 10-minute INT8 run holds 50 ms on the CPU (19.9 FPS) and 16 ms on the Intel iGPU (61.8 FPS), with zero timeouts on both. The iGPU drifts more (+10.8% against +1.8%).
