@@ -79,11 +79,16 @@ jobs:
         working-directory: browser
         run: npm run build
 
-      - name: Test regression gate
+      - name: Regression gate unit tests (passing and failing candidates)
+        run: python -m unittest discover -s tests -v
+
+      - name: Smoke-test regression gate (self-comparison of recorded results; passes by construction)
         run: |
           python benchmark/regression_gate.py `
             --reference-accuracy benchmark/results/deployment_accuracy.json `
+            --reference-deployment onnxruntime_cpu `
             --candidate-accuracy benchmark/results/deployment_accuracy.json `
+            --candidate-deployment onnxruntime_cpu `
             --reference-latency benchmark/results/sustained_int8_robust.json `
             --candidate-latency benchmark/results/sustained_int8_robust.json
         shell: pwsh
