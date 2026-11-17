@@ -45,6 +45,10 @@ All three configurations use the same 640×640 float32 input and batch size 1. T
 
 Accuracy is treated as a deployment property, not only a model-training property.
 
+ONNX Runtime CPU and OpenVINO FP16 score 5.85 and 6.02 mAP50-95 points below the PyTorch FP32 reference on the same 1,000-image subset. The regression gate flags both at its default 1.0 point tolerance. The cause has not been established: `benchmark/evaluate_accuracy.py` and `benchmark/evaluate_deployments.py` call Ultralytics `model.val` with the same image size, batch size, device and workers, so the recorded difference is not explained by those arguments. Reproducing the comparison needs the model files and the COCO val2017 subset images, which are not in this repository. The numbers are kept as recorded.
+
+The recorded accuracy runs are FP32, ONNX Runtime and OpenVINO FP16. The sustained benchmark below is INT8. No INT8 accuracy result is recorded.
+
 ### Sustained INT8 — 10 Minutes
 
 | Device | Threads | Mean | p50 | p95 | FPS | Peak RSS | Drift | Timeouts |
@@ -57,6 +61,8 @@ The CPU sustained run completed 600 seconds with 11,921 successful runs and zero
 The Intel iGPU sustained run completed 600 seconds with 37,070 successful runs and zero timeouts.
 
 The GPU result is faster, but its measured sustained latency drift is higher.
+
+`benchmark/EVALUATION.md` names the GPU stage "Intel Iris Xe" in its planned deployment ladder; the recorded OpenVINO device name is "Intel(R) UHD Graphics (iGPU)", which is what this README reports.
 
 Full recorded evidence:
 - `benchmark/results/backend_comparison.json` (written by `benchmark/compare_backends.py`; not committed, so the latency table above is traceable to `M3_FINAL_TABLE.md` only)
@@ -234,7 +240,20 @@ Generated evidence:
 
 `benchmark/results/`
 
-The repository includes a regression gate to detect unacceptable accuracy or latency regressions.
+### Regression gate
+
+`benchmark/regression_gate.py` compares a candidate with a reference and exits 0 (within tolerance), 1 (regression) or 2 (the inputs cannot be compared). It fails if mAP50-95 drops by more than 1.0 point or CPU p95 latency grows by more than 10% (both adjustable; a change of exactly the tolerance passes).
+
+`deployment_accuracy.json` holds several runs, so the run to compare is named with `--reference-deployment` and `--candidate-deployment` (for example `pytorch_fp32_reference`, `onnxruntime_cpu`, `openvino_fp16_cpu`). It refuses to guess. It also refuses NaN or infinite values, mAP given as a percentage, non-positive latency, accuracy runs at different image sizes, and latency measured on different CPUs unless `--allow-device-mismatch` is given. An earlier version read the FP32 reference block for both sides and so could not see any deployment lose accuracy.
+
+What CI checks, on Linux, Windows and macOS arm64:
+
+- `tests/test_regression_gate.py` runs the gate on synthetic passing and failing candidates, boundary values, bad inputs, and the recorded results (`python -m unittest discover -s tests -v`).
+- A smoke test compares the recorded ONNX Runtime CPU accuracy and the recorded sustained latency with themselves. It passes by construction; it checks the script and the file layout, not a regression.
+
+CI does not measure accuracy or latency. A fresh regression run needs the model files, the COCO subset images and the benchmark hardware: run `benchmark/evaluate_deployments.py` and `benchmark/sustained_benchmark.py` to produce candidate files, then the gate. `evaluate_deployments.py` writes `benchmark/results/deployment_accuracy.json`, so copy the recorded file aside first or the reference is overwritten.
+
+The recorded accuracy runs and the recorded latency come from different model variants (see above), so the repository cannot currently gate an INT8 accuracy regression.
 
 ---
 
