@@ -59,7 +59,7 @@ The Intel iGPU sustained run completed 600 seconds with 37,070 successful runs a
 The GPU result is faster, but its measured sustained latency drift is higher.
 
 Full recorded evidence:
-- `benchmark/results/backend_comparison.json`
+- `benchmark/results/backend_comparison.json` (written by `benchmark/compare_backends.py`; not committed, so the latency table above is traceable to `M3_FINAL_TABLE.md` only)
 - `benchmark/results/deployment_accuracy.json`
 - `benchmark/results/sustained_int8_robust.json`
 - `benchmark/results/M3_FINAL_TABLE.md`
