@@ -45,7 +45,13 @@ All three configurations use the same 640×640 float32 input and batch size 1. T
 
 Accuracy is treated as a deployment property, not only a model-training property.
 
-ONNX Runtime CPU and OpenVINO FP16 score 5.85 and 6.02 mAP50-95 points below the PyTorch FP32 reference on the same 1,000-image subset. The regression gate flags both at its default 1.0 point tolerance. The cause has not been established: `benchmark/evaluate_accuracy.py` and `benchmark/evaluate_deployments.py` call Ultralytics `model.val` with the same image size, batch size, device and workers, so the recorded difference is not explained by those arguments. Reproducing the comparison needs the model files and the COCO val2017 subset images, which are not in this repository. The numbers are kept as recorded.
+ONNX Runtime CPU and OpenVINO FP16 score 5.85 and 6.02 mAP50-95 points below the PyTorch FP32 reference on the same 1,000-image subset. The regression gate flags both at its default 1.0 point tolerance.
+
+Likely cause, not yet confirmed on this repository's files: the CPU ONNX and OpenVINO models were exported with NMS embedded in the graph. An embedded NMS carries a confidence cutoff fixed at export time, so detections below it never reach `model.val`, which expects to score them down to 0.001. That would lower mAP50 more than mAP75 and raise precision slightly, which is the pattern recorded here (mAP50 -10.9, mAP75 -6.0, precision +3.4, recall -2.7 points).
+
+A check on public `yolo26n.pt` and COCO128 (Ultralytics 8.4.216, not this subset) showed the same shape: PyTorch 0.487, default ONNX export 0.477, `nms=True` export 0.387. That reproduces the mechanism; it is not a measurement of this repository's models.
+
+To confirm: run `benchmark/diagnose_onnx_drop.py` on `models/yolo26n.onnx` (look for `'nms': True` in the export args and a `NonMaxSuppression` node), re-export without `nms=True`, and rerun `benchmark/evaluate_deployments.py`. The export command used for the recorded models is not saved in this repository.
 
 The recorded accuracy runs are FP32, ONNX Runtime and OpenVINO FP16. The sustained benchmark below is INT8. No INT8 accuracy result is recorded.
 
